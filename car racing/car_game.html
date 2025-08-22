@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Driving Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <!-- HUD for game stats -->
+        <div id="hud" class="hidden">
+            <div>Score: <span id="score">0</span></div>
+            <div>Speed: <span id="speed">60</span> mph</div>
+            <div>Level: <span id="level">1</span></div>
+        </div>
+
+        <!-- Start Menu -->
+        <div id="startMenu" class="menu">
+            <h1>🏎️ Car Driving Simulator</h1>
+            <p>Navigate through traffic and survive as long as possible!</p>
+            <p>Created By Parbhej Mahruf</p>
+            <div class="instructions">
+                <p><strong>Controls:</strong></p>
+                <p>← → Arrow Keys or A/D - Steer left/right</p>
+                <p>Avoid collisions and rack up points!</p>
+            </div>
+            <button onclick="startGame()">Start Game</button>
+        </div>
+
+        <!-- Game Over Menu -->
+        <div id="gameOverMenu" class="menu hidden">
+            <h2>Game Over!</h2>
+            <div class="stats">
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <p>Distance Traveled: <span id="finalDistance">0</span>m</p>
+                <p>Level Reached: <span id="finalLevel">1</span></p>
+                <p>Cars Avoided: <span id="carsAvoided">0</span></p>
+            </div>
+            <button onclick="startGame()">Play Again</button>
+            <button onclick="showStartMenu()">Main Menu</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
